@@ -8,17 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var text: String = ""
     var body: some View {
         VStack{
             HStack(alignment: .top) {
                 Text("MovieDB")
                     .font(.title)
                     .fontWeight(.bold)
-                    
-                Spacer()
                 
+                Spacer()
             }
             .padding()
+            
+            HStack {
+                
+                TextField("search", text: $text)
+                    .padding(.leading,20)
+            }
+            .padding(7)
+            .padding(.horizontal)
+            .background(Color(.systemGray6))
+            .cornerRadius(8)
+            .padding(.horizontal, 10)
+            .overlay(
+                HStack{
+                    Image(systemName:"magnifyingglass")
+                    Spacer()
+                }
+                .padding(.horizontal,15)
+            )
             Divider()
             
             NowPlaying()

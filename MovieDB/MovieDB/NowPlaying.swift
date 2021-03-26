@@ -10,17 +10,18 @@ import SwiftUI
 struct NowPlaying: View {
     var body: some View {
         VStack{
-            HStack(alignment: .top){
+            HStack{
                 Text("Now Playing")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .padding(3.0)
-                
-                   
+                 Spacer()
+                 Text("See All")
+                    .font(.caption)
                     
-                Spacer()
+                
             }
-            .padding()
-            .frame(height: -3.0)
+            .padding([.top, .leading, .trailing])
+            .frame(height: 0.0)
             
             ScrollView(.horizontal,showsIndicators: false){
                 HStack {
